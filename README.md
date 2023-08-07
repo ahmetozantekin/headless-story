@@ -6,7 +6,7 @@ Headless Story is a super simple, interoperable, framework-free web component of
 
 ```html
 <head>
-  <script defer src="/path/to/headless-story.js"></script>
+  <script defer src="https://www.unpkg.com/headless-story"></script>
 </head>
 
 <body>
