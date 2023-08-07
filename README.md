@@ -1,7 +1,6 @@
 # Headless Story
 
-Headless Story is a super simple, interoperable, framework-free web
-component of the popular story format, allowing present content easily.
+A super simple web component for generating instagramlike stories for web. or snapchat. or facebook. or.
 
 #### Usage
 
@@ -60,16 +59,17 @@ Design tokens with default values.
   --story-caption-font-family: sans-serif;
   --story-progress-background-color: rgb(227 227 227 / 40%);
   --story-progress-fill-color: #ffffff;
-  --thumbnail-bubble-width: 90px;
-  --thumbnail-bubble-height: 90px;
+
+  --thumbnail-bubble-width: 100px;
+  --thumbnail-bubble-height: 100px;
   --thumbnail-bubble-background: transparent;
   --thumbnail-bubble-gradient-background: linear-gradient(
     185deg,
     transparent 20%,
     transparent 90%
   );
-  --thumbnail-bubble-border-radius: 16px;
-  --thumbnail-bubble-gap: 7px;
+  --thumbnail-bubble-border-radius: 100%;
+  --thumbnail-bubble-gap: 3px;
   --thumbnail-bubble-border-size: 2px;
   --loader-text: "Loading...";
   --loader-color: #a8a8a8;
@@ -79,11 +79,41 @@ Design tokens with default values.
 }
 ```
 
+#### Custom Events
+
+| Event Name  | Return Parameters       |
+| ----------- | ----------------------- |
+| StoryChange | currentIndex, direction |
+| StoryOpen   | currentIndex            |
+| StoryClose  | currentIndex            |
+| StoryLoaded | loaded                  |
+
+**Example usage:**
+
+```js
+window.addEventListener("StoryChange", (e) => {
+    // e.detail returns {currentIndex, direction}
+  }, () => window.removeEventListener("StoryChange");
+);
+```
+
+```js
+window.addEventListener("StoryOpen", (e) => {
+    // e.detail returns {currentIndex}
+  }, () => window.removeEventListener("StoryOpen");
+);
+```
+
+```js
+window.addEventListener("StoryLoaded", (e) => {
+    // e.detail returns {loaded}
+  }, () => window.removeEventListener("StoryLoaded");
+);
+```
+
 #### Contributing
 
-We welcome contributions to improve the headless story.
-To contribute: fork, branch, pr.
-<3
+To improve and contribute: fork, branch, pr <3
 
 #### License
 
@@ -91,4 +121,4 @@ This project is licensed under the [WTFPL License](LICENSE).
 
 #### Preview
 
-[demo](-)
+[Demo](https://t.ly/VyX8E)
