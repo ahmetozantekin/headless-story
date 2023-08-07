@@ -1,6 +1,7 @@
 # Headless Story
 
-A super simple web component for generating instagramlike stories for web. or snapchat. or facebook. or.
+Headless Story is a super simple, interoperable, framework-free web
+component of the popular story format, allowing present content easily.
 
 #### Usage
 
