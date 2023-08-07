@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "@rollup/plugin-terser": "^0.4.3",
-    "headless-qr": "^1.0.3",
     "sass": "^1.56.1",
     "sirv-cli": "^2.0.0",
     "svelte-preprocess": "^4.10.7"
