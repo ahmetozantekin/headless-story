@@ -1,0 +1,306 @@
+@import "./defaults";
+@import "./variables";
+
+.web-stories {
+  @include wrapper;
+
+  &__backdrop {
+    @include backdrop;
+  }
+
+  &__modal {
+    aspect-ratio: var(--story-aspect-ratio, $default-story-aspect-ratio);
+    background-color: #3b3b3b;
+    height: var(--story-height, $default-story-height);
+    position: relative;
+    border-radius: var(--story-border-radius, $default-story-border-radius);
+    z-index: 10;
+    max-width: 100vw;
+
+    &__list {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: var(--story-border-radius, $default-story-border-radius);
+      position: relative;
+
+      &__gallery {
+        @include center;
+        user-select: none;
+        display: flex;
+
+        img,
+        video {
+          width: 100%;
+        }
+      }
+
+      &__subtext {
+        position: absolute;
+        bottom: calc(10px + 0.7vh);
+        left: 20px;
+        width: 75%;
+        span {
+          color: var(--story-caption-color, $default-story-caption-color);
+          font-family: var(
+            --story-caption-font-family,
+            $default-story-caption-font-family
+          );
+          font-size: var(
+            --story-caption-font-size,
+            $default-story-caption-font-size
+          );
+          font-weight: var(
+            --story-caption-font-weight,
+            $default-story-caption-font-weight
+          );
+          text-shadow: 0 0 4px
+            var(--story-caption-text-shadow, $default-story-caption-text-shadow);
+          line-height: 1.45em;
+          @include ellipsis;
+        }
+      }
+
+      &__external-link {
+        position: absolute;
+        bottom: calc(50px + 0.7vh);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 7px 15px;
+        border-radius: 12px;
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.54);
+        max-height: 15px;
+
+        &.bottom {
+          bottom: calc(50px + 0.7vh);
+        }
+        &.top {
+          top: calc(50px + 0.7vh);
+        }
+        &.center {
+          top: 50%;
+        }
+
+        a {
+          text-decoration: none;
+          color: #3b3b3b;
+          font-family: var(
+            --story-caption-font-family,
+            $default-story-caption-font-family
+          );
+          font-size: var(
+            --story-caption-font-size,
+            $default-story-caption-font-size
+          );
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+
+          &:before {
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%23000000' height='800px' width='800px' version='1.1' id='Layer_1' viewBox='0 0 511.997 511.997' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M212.26,390.24l-60.331,60.331c-25.012,25.012-65.517,25.012-90.508,0.005c-24.996-24.996-24.996-65.505-0.005-90.496 l120.683-120.683c24.991-24.992,65.5-24.992,90.491,0c8.331,8.331,21.839,8.331,30.17,0c8.331-8.331,8.331-21.839,0-30.17 c-41.654-41.654-109.177-41.654-150.831,0L31.247,329.909c-41.654,41.654-41.654,109.177,0,150.831 c41.649,41.676,109.177,41.676,150.853,0l60.331-60.331c8.331-8.331,8.331-21.839,0-30.17S220.591,381.909,212.26,390.24z'/%3E%3Cpath d='M480.751,31.24c-41.654-41.654-109.199-41.654-150.853,0l-72.384,72.384c-8.331,8.331-8.331,21.839,0,30.17 c8.331,8.331,21.839,8.331,30.17,0l72.384-72.384c24.991-24.992,65.521-24.992,90.513,0c24.991,24.991,24.991,65.5,0,90.491 L317.845,284.638c-24.992,24.992-65.5,24.992-90.491,0c-8.331-8.331-21.839-8.331-30.17,0s-8.331,21.839,0,30.17 c41.654,41.654,109.177,41.654,150.831,0l132.736-132.736C522.405,140.418,522.405,72.894,480.751,31.24z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            height: 15px;
+            width: 15px;
+            position: relative;
+            display: flex;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    // &__buttons {
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   padding: 0 3vw;
+    //   aspect-ratio: var(--story-aspect-ratio, $default-story-aspect-ratio);
+    //   height: 100%;
+    //   position: absolute;
+    //   top: 50%;
+    //   z-index: 1;
+    //   pointer-events: none;
+    //   box-sizing: border-box;
+
+    //   button {
+    //     @include button-resetter;
+    //   }
+
+    //   #prev,
+    //   #next {
+    //     @include next-prev-buttons;
+    //   }
+
+    //   #prev {
+    //     left: -3vw;
+    //   }
+    //   #next {
+    //     right: -3vw;
+    //   }
+    //   #close {
+    //     @include close-button;
+    //   }
+    // }
+
+    .web-stories__modal__controllers {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 3vw;
+      aspect-ratio: var(--story-aspect-ratio, $default-story-aspect-ratio);
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      box-sizing: border-box;
+
+      &-prev,
+      &-next,
+      &-close {
+        @include button-resetter;
+      }
+
+      &-prev,
+      &-next {
+        @include next-prev-buttons;
+      }
+
+      &-prev {
+        left: -3vw;
+      }
+      &-next {
+        right: -3vw;
+      }
+      &-close {
+        @include close-button;
+      }
+    }
+
+    &__progress {
+      @include progress-bar;
+
+      &__bar {
+        background-color: var(
+          --story-progress-background-color,
+          $default-story-progress-background-color
+        );
+        flex: 1;
+        position: relative;
+        border-radius: 12px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+        &.animation-filled {
+          &:before {
+            @include animation-pseudo;
+            width: 100%;
+            background-color: var(
+              --story-progress-fill-color,
+              $default-story-progress-fill-color
+            );
+          }
+        }
+        &.animation-start {
+          &:before {
+            @include animation-pseudo;
+            width: 0;
+            background-color: var(
+              --story-progress-fill-color,
+              $default-story-progress-fill-color
+            );
+            animation: progress var(--delay) linear;
+            animation-fill-mode: forwards;
+          }
+        }
+
+        &.animation-paused {
+          &:before {
+            animation-play-state: paused;
+          }
+        }
+      }
+    }
+  }
+}
+
+.web-stories__thumbnails {
+  &__loader {
+    &:after {
+      @include loading;
+    }
+  }
+  .story-bubbles {
+    @include bubble-wrapper;
+    @include bubble-scrollbar;
+
+    .bubbles {
+      gap: var(--thumbnail-bubble-gap, $default-thumbnail-bubble-gap);
+    }
+  }
+}
+
+.bubble {
+  width: var(--thumbnail-bubble-width, $default-thumbnail-bubble-width);
+  @include button-resetter;
+}
+
+.thumb {
+  width: 100%;
+  height: var(--thumbnail-bubble-height, $default-thumbnail-bubble-height);
+  position: relative;
+  overflow: hidden;
+  background-color: var(
+    --thumbnail-bubble-background,
+    $default-thumbnail-bubble-background
+  );
+  background-image: var(
+    --thumbnail-bubble-gradient-background,
+    $default-thumbnail-bubble-gradient-background
+  );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: var(
+    --thumbnail-bubble-border-radius,
+    $default-thumbnail-bubble-border-radius
+  );
+}
+
+.thumb-img {
+  @include bubble-image;
+  border-radius: var(
+    --thumbnail-bubble-border-radius,
+    $default-thumbnail-bubble-border-radius
+  );
+}
+
+@media screen and (max-width: 480px) {
+  .web-stories {
+    &__modal {
+      width: 100%;
+      height: 100%;
+
+      &__list {
+        border-radius: 0;
+        &__gallery {
+          height: 100%;
+          width: 100%;
+          position: relative;
+          transform: unset;
+          top: unset;
+          left: unset;
+
+          img,
+          video {
+            width: unset;
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}

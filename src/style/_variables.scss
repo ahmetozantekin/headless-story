@@ -1,0 +1,201 @@
+/** Keyframes */
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/** Mixins */
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 3px);
+}
+
+@mixin backdrop {
+  background-color: var(--story-background, $default-story-background);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(var(--story-blur, $default-story-blur));
+  z-index: 9;
+}
+
+@mixin wrapper {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin next-prev-buttons {
+  pointer-events: all;
+  position: absolute;
+  z-index: 1;
+  min-width: 40px;
+  height: calc(100% - 100px);
+  bottom: 50px;
+  padding: 0;
+  font-size: 3vh;
+  width: 12vh;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+
+  @media screen and (max-width: 480px) {
+    bottom: 0;
+  }
+}
+
+@mixin close-button {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  width: 47%;
+  height: 2px;
+  z-index: 1;
+  pointer-events: all;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 0;
+  z-index: 1;
+  pointer-events: all;
+
+  &:after {
+    position: absolute;
+    content: " ";
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    display: block;
+  }
+}
+
+@mixin button-resetter {
+  border: 0;
+  background: transparent;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin progress-bar {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 95%;
+  height: 3px;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  gap: 5px;
+}
+
+@mixin bubble-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .bubbles {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: max-content;
+    height: auto;
+  }
+}
+
+@mixin bubble-scrollbar {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    height: 3px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@mixin bubble-image {
+  $border-size: var(
+    --thumbnail-bubble-border-size,
+    $default-thumbnail-bubble-border-size
+  );
+
+  width: calc(100% - $border-size * 2);
+  height: calc(100% - $border-size * 2);
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin animation-pseudo {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+@mixin loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: var(--loader-text, $default-loader-text);
+  height: var(--thumbnail-bubble-size, $default-thumbnail-bubble-height);
+  font-family: var(--loader-font-family, $default-loader-font-family);
+  color: var(--loader-color, $default-loader-color);
+  font-size: var(--loader-font-size, $default-loader-font-size);
+  font-weight: var(--loader-font-weight, $default-loader-font-weight);
+  margin: 7px 0;
+  animation: loading 1s linear infinite;
+}

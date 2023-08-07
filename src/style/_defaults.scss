@@ -1,0 +1,30 @@
+/** Defaults */
+$default-story-background: rgba(0, 0, 0, 0.85);
+$default-story-aspect-ratio: 0.5625;
+$default-story-height: 90vh;
+$default-story-blur: 3px;
+$default-story-border-radius: 16px;
+$default-story-caption-color: #fff;
+$default-story-caption-text-shadow: rgba(0, 0, 0, 0.94);
+$default-story-caption-font-size: 1.55vh;
+$default-story-caption-font-weight: 500;
+$default-story-caption-font-family: sans-serif;
+$default-story-progress-background-color: rgb(227 227 227 / 40%);
+$default-story-progress-fill-color: rgb(255 255 255);
+
+$default-thumbnail-bubble-width: 90px;
+$default-thumbnail-bubble-height: 90px;
+$default-thumbnail-bubble-border-size: 2px;
+$default-thumbnail-bubble-gap: 7px;
+$default-thumbnail-bubble-background: transparent;
+$default-thumbnail-bubble-gradient-background: linear-gradient(
+  185deg,
+  transparent 20%,
+  transparent 90%
+);
+$default-thumbnail-bubble-border-radius: 16px;
+$default-loader-text: "Loading";
+$default-loader-color: #a8a8a8;
+$default-loader-font-size: 14px;
+$default-loader-font-weight: 400;
+$default-loader-font-family: sans-serif;
