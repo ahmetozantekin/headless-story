@@ -1,6 +1,8 @@
 {
   "name": "headless-story",
   "version": "1.0.0",
+  "main": "public/build/headless-story.js",
+  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
