@@ -1,8 +1,8 @@
 # Headless Story
 
-Headless Story is a super simple, interoperable, framework-free web component of the popular story format, allowing present content easily. 
+Headless Story is a super simple, interoperable, framework-free web component of the popular story format, allowing present content easily.
 
-#### Usage
+### Usage
 
 ```html
 <head>
@@ -14,7 +14,7 @@ Headless Story is a super simple, interoperable, framework-free web component of
 </body>
 ```
 
-#### Story Format
+### Story Format
 
 ```json
 {
@@ -41,7 +41,7 @@ Headless Story is a super simple, interoperable, framework-free web component of
 }
 ```
 
-#### Design Tokens & Customization
+### Design Tokens & Customization
 
 Design tokens with default values.
 
@@ -79,7 +79,7 @@ Design tokens with default values.
 }
 ```
 
-#### Custom Events
+### Custom Events
 
 | Event Name  | Return Parameters       |
 | ----------- | ----------------------- |
@@ -111,14 +111,14 @@ window.addEventListener("StoryLoaded", (e) => {
 );
 ```
 
-#### Contributing
+### Contributing
 
 To improve and contribute: fork, branch, pr <3
 
-#### License
+### License
 
 This project is licensed under the [WTFPL License](LICENSE).
 
-#### Preview
+### Preview
 
 [Demo](https://t.ly/VyX8E)

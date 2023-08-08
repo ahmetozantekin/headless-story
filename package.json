@@ -1,9 +1,11 @@
 {
   "name": "headless-story",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "public/build/headless-story.js",
   "type": "module",
   "repository": "https://github.com/ahmetozantekin/headless-story",
+  "homepage": "https://t.ly/VyX8E",
+  "license": "WTFPL",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -24,5 +26,12 @@
     "sass": "^1.56.1",
     "sirv-cli": "^2.0.0",
     "svelte-preprocess": "^4.10.7"
-  }
+  },
+  "keywords": [
+    "story",
+    "web story",
+    "story web component",
+    "web components",
+    "story custom element"
+  ]
 }
