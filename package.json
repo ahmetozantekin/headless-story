@@ -1,6 +1,6 @@
 {
   "name": "headless-story",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "public/build/headless-story.js",
   "type": "module",
   "repository": "https://github.com/ahmetozantekin/headless-story",
